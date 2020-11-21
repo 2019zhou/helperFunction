@@ -24,8 +24,10 @@ def preprocess_data():
 
     for index, item in enumerate(df['patch']):
         item = comment_remover(item)
+        item = re.sub(r'@@.*@@', " ", item)
         df.loc[index, 'patch'] = item
     # 同时处理 各种不同样式的注释
+    df = df[['cve_id', 'patch', 'summary']]
     df.to_csv("vul_data_3.csv")
 
 
