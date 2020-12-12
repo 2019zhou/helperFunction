@@ -28,6 +28,7 @@ ast = parser.parse(text)
 with open('ast', 'wb') as f:
     pickle.dump(ast, f, protocol=-1)
 
+
 # Deserialize.
 with open('ast', 'rb') as f:
     ast = pickle.load(f)

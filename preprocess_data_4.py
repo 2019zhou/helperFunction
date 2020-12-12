@@ -11,11 +11,7 @@ def preprocess_data():
             source.write(line[1:])
         elif line[0] == '+':
             target.write(line[1:])
-        elif len(line) == 1 and line != " ":
-            print(line)
-            source.write(line)
-            target.write(line)
-        elif len(line) != 0 and line != " " and line[0] != "#" and line[0:1] != " #":
+        elif len(line) != 0 and len(line)!= 1 and line != " "and line[0] != "#" and line[0:1] != " #":
             source.write(line)
             target.write(line)
 

@@ -1,6 +1,4 @@
 import pandas as pd
-import demjson
-
 
 def preprocess_data():
     # 读入数据
@@ -43,13 +41,6 @@ def preprocess_data():
             df.loc[index, 'files_changed'] = item
 
     df.to_csv("vul_data_1.csv")
-
-
-
-def format_str(string):
-    for char in ['\r\n', '\r', '\n']:
-        string = string.replace(char, ' ')
-    return string
 
 
 if __name__ == '__main__':
