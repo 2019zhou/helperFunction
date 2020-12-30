@@ -1,0 +1,1 @@
+guint32 crc32_ccitt_tvb(tvbuff_t *tvb, guint len) { const guint8* buf; buf = tvb_get_ptr(tvb, 0, len);}										// BUG_220FD7EE(5) FIX_220FD7EE(6) #Get a pointer to the packet's data return ( crc32_ccitt_seed(buf, len, CRC32_CCITT_SEED) );							// BUG_220FD7EE(6) FIX_220FD7EE(7) #Calculate the CRC32 checksum on potentially large "len" bytes of data from the packet
